@@ -1,10 +1,16 @@
 window.onload = function(){
     var gamesBoard = document.getElementById('game-board');
     var gamePiece;
-    //var ctx = gamesBoard.getContext('2d');
+    var frog = document.getElementById('frog');
+    var ctx = gamesBoard.getContext('2d');
+    ctx.drawImage(frog, 0, 0, 30, 30);
+    console.log(frog);
 
+
+    /*
     function startGame(){
-        gamePiece = new component(30, 30, "green", 30, 30);
+        gamePiece = new component(30, 30, frog, 30, 30, 'image');
+        //
         myGameArea.start();
     }
 
@@ -18,12 +24,24 @@ window.onload = function(){
         } 
     }
     
-    function component (width, height, color, x, y){
+    function component (image, width, height, x, y){
+        
+        this.type=type;
+        if(type=="image"){
+            this.image = new Image();
+            this.image.src = color;
+           
+        }
         this.width = width;
         this.height = height;
         this.x = x;
         this.y = y;
         ctx = gamesBoard.getContext('2d');
+        
+        if (type=="image"){
+            ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+            console.log("new image");
+        }
         ctx.fillStyle = color;
         this.update = function(){
             ctx.fillRect(this.x, this.y, this.width, this.height);
@@ -52,6 +70,7 @@ window.onload = function(){
     
     startGame();
 
-
-
+ 
+    logPlayer('Kelsey');
+*/
 }
